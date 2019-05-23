@@ -1,0 +1,25 @@
+.AppHeader{
+    position: relative;
+    background-color: #ffffff;
+    min-width: 1032px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.AppHeader-inner{
+    position: relative;
+    display: flex;
+    height: 52px;
+    width: 1000px;
+    padding: 0 16px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.ZhihuLogo {
+    fill: #0084ff
+}
+
+.Icon{
+    vertical-align: text-bottom;
+}
