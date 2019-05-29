@@ -16,10 +16,23 @@
     align-items: center;
 }
 
+.AppHeader.is-fixed{
+    z-index: 100;
+}
+
+.Sticky.is-fixed{
+    position: fixed;
+    box-sizing: border-box;
+}
+
 .ZhihuLogo {
     fill: #0084ff
 }
 
 .Icon{
     vertical-align: text-bottom;
+}
+
+.Sticky--holder{
+    visibility: hidden;
 }

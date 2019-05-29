@@ -73,7 +73,6 @@
 
 .SearchBar-toolWrapper{
     position: relative;
-    z-index: 104;
     width: 326px;
     height: 34px;
 }
@@ -112,7 +111,6 @@
 }
 
 .SearchBar-askButton{
-    z-index: 103;
     padding: 0 14px;
     margin-left: 16px;
     transition: opacity .3s ease ,-webkit-transform .3s ease;
