@@ -16,6 +16,24 @@
     background-color: #0084ff;
 }
 
+.Button--primary.Button--blue:hover{
+    background-color: #0077e6;
+    border-color: #0077e6;
+}
+
+.Button--plain{
+    height: auto;
+    padding: 0;
+    line-height: inherit;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.Button--plain:hover{
+    color:#76839B;
+}
+
 .Input-wrapper{
     position: relative;
     display: flex;

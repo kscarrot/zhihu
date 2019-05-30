@@ -31,8 +31,8 @@ const Searchbar = props => {
             </div>
             <button type="button" className={
                 !isfocused
-                    ? "Button SearchBar-askButton Button--blue"
-                    : "Button SearchBar-askButton  SearchBar-hiddenAskButton Button--blue"}
+                    ? "Button SearchBar-askButton Button--primary Button--blue "
+                    : "Button SearchBar-askButton  SearchBar-hiddenAskButton Button--primary Button--blue"}
             >提问</button>
         </div>
     )

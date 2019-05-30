@@ -1,0 +1,32 @@
+
+.CornerButtons{
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    right: 12px;
+    flex-direction: column;
+    transition: transform .2s ease;
+    will-change: transfrom;
+}
+
+.CornerButton{
+    background: #fff;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 1px 3px raba(26,26,26,.1)
+}
+
+.CornerButton:hover{
+    background: #d3d3d3;
+}
+
+.CornerAnimayedFlex{
+    width: 40px;
+    height: 52px;
+    transition: height .2s ease;
+}
+
+.CornerAnimayedFlex--hidden{
+    height: 0;
+}

@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import AppHeader from './components/AppHeader'
-
+import TopStory from './components/TopStory'
+import ConerButtons from './components/CornerButtons'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isSticky: false,
-      isShown: false,
+      isAppHeaderSticky: false,
+      isAppHeaderShown: true,
+      isBacktopShown: false,
       lastScrollY: 0,
       currentWidth: 1032
     }
@@ -43,19 +45,23 @@ class App extends Component {
   handleScroll = this.throttle(() => {
     const y = window.scrollY
     this.setState({
-      isSticky: y !== 0,
-      isHidden: y - this.state.lastScrollY > 0,
+      isAppHeaderSticky: y !== 0,
+      isAppHeaderShown: y - this.state.lastScrollY < 0,
+      isBacktopShown: y > 1000,
       lastScrollY: y
     })
   }, 1000 / 60)
 
   handleResize = this.throttle(() => this.setState({ currentWidth: window.innerWidth }), 1000 / 60)
 
+
   render() {
-    const { isHidden, isSticky, currentWidth } = this.state
+    const { isAppHeaderShown, isAppHeaderSticky, currentWidth, isBacktopShown } = this.state
     return (
       <>
-        <AppHeader isShown={!isHidden} isSticky={isSticky} currentWidth={currentWidth} />
+        <AppHeader isShown={isAppHeaderShown} isSticky={isAppHeaderSticky} currentWidth={currentWidth} />
+        <TopStory/>
+        <ConerButtons isShown={isBacktopShown}></ConerButtons>
         <div style={{ height: "2000px", width: "100%", backgroundColor: "lightblue" }}></div>
       </>
     )

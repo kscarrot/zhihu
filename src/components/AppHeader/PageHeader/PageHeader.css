@@ -12,8 +12,28 @@
     transform: translateY(100%);
 }
 
-.TopstoryPageheader{
+.TopstoryPageHeader{
     height: 52px;
     margin: 0 auto;
     width: 1000px;
+}
+
+.TopstoryPageHeader-main,.TopstoryPageHeader{
+    display: flex;
+    align-items: center;
+}
+
+.TopstoryPageHeader-main{
+    flex:1 1;
+}
+
+.TopstoryPageHeader-aside{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 296px;
+}
+
+.TopstoryPageHeader-askButton{
+    padding: 0 14px;
 }

@@ -1,13 +1,6 @@
 
 
-.Button--plain{
-    height: auto;
-    padding: 0;
-    line-height: inherit;
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-}
+
 
 .AppHeader-userInfo{
     display: flex;

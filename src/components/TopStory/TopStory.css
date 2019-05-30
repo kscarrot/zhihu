@@ -1,0 +1,156 @@
+.TopStory-container{
+    display: flex;
+    align-items: flex-start;
+    width:1000px;
+    padding: 0 16px;
+    margin: 10px auto;
+}
+
+.Topstory-mainColumn{
+    flex-shrink: 0;
+    margin-right: 10px;
+    margin-bottom: 0;
+    width:694px;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1)
+}
+
+
+.GlobalSideBar{
+    flex: 1 1;
+    font-size: 14px;
+}
+
+.GlobalSideBar-navLink{
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    overflow: hidden;
+    height:40px;
+}
+
+
+.GlobalSideBar-navNumber{
+    padding: 6px 10px;
+    border-radius: 2px;
+    background: #f6f6f6;
+    color: #8590a6;
+    font-size: 12px;
+}
+
+.GlobalSideBar-categoryList{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0 -5px;
+    padding: 0 10px;
+}
+
+.GlobalSideBar-categoryItem{
+    width: 33%;
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.GlobalSideBar-categoryItem .Button{
+    display: flex;
+    flex:1 1;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    color: currentColor;
+}
+
+.GlobalSideBar-categoryIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+.GlobalSideBar-categoryLabel{
+    font-size: 15px;
+    color:#8590a6;
+}
+
+.GlobalWrite-draft .GlobalSideBar-navLink{
+    margin: 0 -20px;
+    width: 100%;
+}
+
+.GlobalSideBar-navText{
+    flex:1 1;
+    margin: 0 10px;
+    text-align: left;
+}
+
+.GlobalSideBar-navList{
+    width: 100%;
+    padding: 8px 0;
+}
+
+.GlobalWrite-draft{
+    display: flex;
+    align-items: center;
+    height: 48px;
+    margin: 0 20px;
+    color: #8590a6;
+    border-top: 1px solid #f0f2f7;
+}
+
+.GlobalWrite-nav{
+    display:flex;
+    justify-content: center;
+}
+
+.GlobalWrite-nav,.GlobalWrite-navItem{
+    display: flex;
+}
+
+.GlobalWrite-navItem{
+    align-items: center;
+    cursor: pointer;
+    flex-direction: column;
+    margin: 23px;
+    position: relative;
+}
+
+.GlobalWrite-navTitle{
+    color: #444;
+    font-size: 16px;
+}
+
+.GlobalWrite-navIcon{
+    color:#8590a6;
+    margin-bottom: 6px;
+}
+
+.GlobalSideBar .Footer{
+    font-size:13px;
+    line-height: 2;
+    color:#8590a6;
+}
+
+.Footer-item{
+    display: inline-block;
+}
+
+.Footer-dot:after{
+    margin: 0 5px;
+    content: "\B7";
+}
+
+.Card{
+    margin-bottom: 10px;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    box-sizing:border-box;
+}
+
+.OrgCreateButton{
+    border: none;
+    padding: 0;
+}

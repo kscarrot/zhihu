@@ -6,6 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 test.js
 test.json
+svgorg/
 
 # Editor directories and files
 .idea
