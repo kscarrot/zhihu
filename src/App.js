@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import AppHeader from './components/AppHeader'
 import TopStory from './components/TopStory'
 import ConerButtons from './components/CornerButtons'
+import throttle from './util/throttle'
+import PageState from './components/Tool/PageState'
 
 class App extends Component {
   constructor(props) {
@@ -24,25 +27,10 @@ class App extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('resize', this.handleResize)
   }
 
-  throttle(fn, delay) {
-    let timeout
-    let start = new Date()
-    const threshold = delay || (1000 / 60)
-    return function () {
-      let context = this, args = arguments, current = new Date() - 0
-      clearTimeout(timeout)
-      if (current - start >= threshold) {
-        fn.apply(context, args)
-        start = current
-      } else {
-        timeout = setTimeout(() => fn.apply(context, args), threshold)
-      }
-    }
-  }
-
-  handleScroll = this.throttle(() => {
+  handleScroll = throttle(() => {
     const y = window.scrollY
     this.setState({
       isAppHeaderSticky: y !== 0,
@@ -52,20 +40,19 @@ class App extends Component {
     })
   }, 1000 / 60)
 
-  handleResize = this.throttle(() => this.setState({ currentWidth: window.innerWidth }), 1000 / 60)
-
+  handleResize = () => window.requestAnimationFrame(() => this.setState({ currentWidth: window.innerWidth }))
 
   render() {
     const { isAppHeaderShown, isAppHeaderSticky, currentWidth, isBacktopShown } = this.state
     return (
-      <>
-        <AppHeader isShown={isAppHeaderShown} isSticky={isAppHeaderSticky} currentWidth={currentWidth} />
-        <TopStory/>
-        <ConerButtons isShown={isBacktopShown}></ConerButtons>
-        <div style={{ height: "2000px", width: "100%", backgroundColor: "lightblue" }}></div>
-      </>
+      <Router>
+        <PageState>
+          <AppHeader isShown={isAppHeaderShown} isSticky={isAppHeaderSticky} currentWidth={currentWidth} />
+          <TopStory />
+          <ConerButtons isShown={isBacktopShown}></ConerButtons>
+        </PageState>
+      </Router>
     )
-
   }
 
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import './SimpleSearchbar.css'
-import SearchIcon from '../../../svg/SearchIcon'
+import SearchIcon from '../../../Svg/SearchIcon'
 
 
 const Searchbar = props => {

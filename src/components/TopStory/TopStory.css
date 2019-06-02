@@ -28,6 +28,9 @@
     height:40px;
 }
 
+.GlobalSideBar-navLink:hover{
+    background: #f6f6f6;
+}
 
 .GlobalSideBar-navNumber{
     padding: 6px 10px;
@@ -35,6 +38,10 @@
     background: #f6f6f6;
     color: #8590a6;
     font-size: 12px;
+}
+
+.GlobalSideBar-navLink:hover .GlobalSideBar-navNumber{
+    background: #fff;
 }
 
 .GlobalSideBar-categoryList{
@@ -48,6 +55,10 @@
     width: 33%;
     display: flex;
     margin-bottom: 25px;
+}
+
+.GlobalSideBar-categoryItem  a:hover .GlobalSideBar-categoryLabel{
+    color: currentColor;
 }
 
 .GlobalSideBar-categoryItem .Button{
@@ -121,6 +132,10 @@
     font-size: 16px;
 }
 
+.GlobalWrite-navItem:hover .GlobalWrite-navTitle{
+    color:#175199;
+}
+
 .GlobalWrite-navIcon{
     color:#8590a6;
     margin-bottom: 6px;
@@ -153,4 +168,34 @@
 .OrgCreateButton{
     border: none;
     padding: 0;
+}
+
+.TopstoryTabs{
+    display: flex;
+    height: 58px;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.Topstory-tabs{
+    border-bottom: 1px solid #f0f2f7;
+}
+
+.TopstoryTabs-link{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin: 0 22px;
+}
+
+.TopstoryTabs-link.is-active{
+    color: #0084ff;
+    font-weight: 500;
+}
+
+.Topstory-tabCard{
+    box-shadow: none;
+}
+
+.Topstory-noMarginCard{
+    margin-bottom: 0;
 }

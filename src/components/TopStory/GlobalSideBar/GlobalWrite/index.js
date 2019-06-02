@@ -23,7 +23,7 @@ const GlobalWrite = props => {
                 </a>
             </div>
             <div className="GlobalWrite-draft">
-                <a href="" className="GlobalSideBar-navLink">
+                <a href="#" className="GlobalSideBar-navLink">
                     <Draft/>
                     <div className="GlobalSideBar-navText">我的草稿</div>
                     <div className="GlobalSideBar-navNumber">{props.number}</div>

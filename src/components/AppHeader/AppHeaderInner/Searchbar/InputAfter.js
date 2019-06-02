@@ -1,6 +1,6 @@
 import React from 'react'
 import './Searchbar.css'
-import SearchIcon from '../../../svg/SearchIcon'
+import SearchIcon from '../../../Svg/SearchIcon'
 
 const InputAfter = props => {
     return (

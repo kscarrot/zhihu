@@ -15,9 +15,22 @@ const NavList = props => {
         { text: "版权服务中心", name: "GlobalSidebar-copyrightItem", svg: <CopyRight />, number: null },
     ]
 
+    const click = e => {
+         e.preventDefault()
+    }
+
     return (
         <ul className="GlobalSideBar-navList">
-            {list.map(item => <NavListItem key={item.name} cName={item.name} itemText={item.text} itemSvg={item.svg} number={item.number} />)}
+            {list.map(item => {
+                return <NavListItem
+                    key={item.name}
+                    cName={item.name}
+                    itemText={item.text}
+                    itemSvg={item.svg}
+                    number={item.number}
+                    click = {click}
+                />
+            })}
         </ul>
     )
 }

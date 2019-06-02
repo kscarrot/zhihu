@@ -1,9 +1,47 @@
+.Button{
+    display: inline-block;
+    padding: 0 16px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #8590a6;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    border: 1px solid;
+    border-radius: 3px;
+}
+
+.Button--blue{
+    color: #fff;
+    background-color: #0084ff;
+}
+
+.Button--primary.Button--blue:hover{
+    background-color: #0077e6;
+    border-color: #0077e6;
+}
+
+.Button--plain{
+    height: auto;
+    padding: 0;
+    line-height: inherit;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.Button--plain:hover{
+    color:#76839B;
+}
+
 .AppHeader{
     position: relative;
     background-color: #ffffff;
     min-width: 1032px;
     width: 100%;
     overflow: hidden;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    background-clip: content-box;
 }
 
 .AppHeader-inner{
@@ -35,4 +73,82 @@
 
 .Sticky--holder{
     visibility: hidden;
+}
+
+.Popover-content {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px rgba(26, 26, 26, .1);
+    z-index: 203
+}
+
+.Popover-content--fixed{
+    position: fixed;
+}
+
+.Popover-content--bottom {
+    margin-top: 8px
+}
+
+.Popover-content--bottom.Popover-content--arrowed {
+    margin-top: 16px
+}
+
+.Popover-arrow {
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none
+}
+
+.Popover-arrow:after {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    margin: -12px;
+    border: 1px solid #ebebeb;
+    background: #fff;
+    transform: rotate(45deg);
+    pointer-events: auto
+}
+
+.Popover-arrow--bottom:after{
+    left:50%;
+    bottom: -8px;
+}
+
+.Popover-arrow--bottom {
+    width: 32px;
+    height: 16px;
+    transform: translate(-50%, -100%)
+}
+
+.Menu{
+    padding: 6px 0;
+}
+
+.Menu-item {
+    display: block;
+    width: 100%;
+    padding: 0 20px;
+    text-align: left;
+    cursor: pointer;
+    box-sizing: border-box
+}
+
+.Menu-item.is-active {
+    background: #f6f6f6
+}
+
+.AppHeaderProfileMenu-item {
+    align-items: center;
+    display: flex;
+    height: 36px
+}
+
+.AppHeaderProfileMenu-item .Zi{
+    margin-right: 6px;
 }

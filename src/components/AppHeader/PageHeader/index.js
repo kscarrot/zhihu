@@ -1,6 +1,7 @@
 import React from 'react'
-import ZhihuLogo from '../../svg/ZhihuLogo'
+import ZhihuLogo from '../../Svg/ZhihuLogo'
 import SimleSearchBar from './SimpleSearchBar'
+import ToptoryTabs from '../../TopStory/ToptoryTabs'
 import './PageHeader.css'
 
 const PageHeader = props => {
@@ -8,9 +9,8 @@ const PageHeader = props => {
         <div className={props.isShown ? 'PageHeader' : 'PageHeader is-shown'}>
             <div className="TopstoryPageHeader">
                 <div className="TopstoryPageHeader-main">
-                    <a href="#">
-                        <ZhihuLogo />
-                    </a>
+                    <a href="/"><ZhihuLogo /></a>
+                    <ToptoryTabs />
                 </div>
                 <div className="TopstoryPageHeader-aside">
                     <SimleSearchBar />
