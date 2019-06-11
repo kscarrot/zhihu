@@ -1,9 +1,11 @@
-import React from 'react'
-import { Route, Switch } from "react-router-dom";
+import React, { useEffect } from 'react'
+import { Route, Switch } from "react-router-dom"
 import TopstoryTabs from "../ToptoryTabs"
+import TopstoryItem from "../TopstoryItem"
+import mockjson from "../mock.json"
 
 const TopstoryMain = props => {
-
+    console.log(mockjson)
     return (
         <div className="Topstory-mainColumn">
             <div className="Card Topstory-noMarginCard Topstory-tabCard">
@@ -11,13 +13,25 @@ const TopstoryMain = props => {
             </div>
             <Switch>
                 <Route path="/" exact>
-                    main
+                    {mockjson.data.map(e => {
+                        if (e.verb === "MEMBER_VOTEUP_ANSWER") {
+                            return <TopstoryItem itemData={e} key={e.id} />
+                        }
+                    })}
                 </Route>
                 <Route path="/follow">
-                    follow
+                    {mockjson.data.map(e => {
+                        if (e.verb === "MEMBER_VOTEUP_ANSWER") {
+                            return <TopstoryItem itemData={e} key={e.id} />
+                        }
+                    })}
                 </Route>
                 <Route path="/hot">
-                    hot
+                    {mockjson.data.map(e => {
+                        if (e.verb === "MEMBER_VOTEUP_ANSWER") {
+                            return <TopstoryItem itemData={e} key={e.id} />
+                        }
+                    })}
                 </Route>
             </Switch>
         </div>

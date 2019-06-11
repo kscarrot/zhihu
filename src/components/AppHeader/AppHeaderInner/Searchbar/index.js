@@ -2,33 +2,48 @@ import React, { useState } from 'react'
 import './Searchbar.css'
 import Input from './Input'
 import InputAfter from './InputAfter'
+import Popover from '../../../Tool/Popover'
+import Portal from '../../../Tool/Portal'
+import { useLocalStorage } from '../../../../hooks/useLocalStorage'
+import SearchMenu from './SearchMenu'
 
 const Searchbar = props => {
     const [isfocused, setisfocused] = useState(false)
-
-    const focus = () => {
-        if (!isfocused) {
-            setisfocused(true)
-        }
-    }
-
-    const blur = () => {
-        if (isfocused) {
-            setisfocused(false)
-        }
-    }
-
+    const [inputText, setInputText] = useState('')
+    const [history, updateHistory] = useLocalStorage("search::history", "[]")
 
     return (
         <div className="SearchBar">
             <div className="SearchBar-toolWrapper">
                 <form className="SearchBar-tool">
                     <div className="Popover">
-                        <Input isfocused={isfocused} onFocus={focus} onBlur={blur} />
-                        <InputAfter />
-                    </div>
+                        <Input isfocused={isfocused} onClick={() => setisfocused(true)} setInputText={setInputText} />
+                        <InputAfter handleClick={() => {
+                            if (inputText === '') return
+                            let temp = Array.from(JSON.parse(history))
+                            temp.unshift(inputText)
+                            updateHistory(JSON.stringify([...new Set(temp)]))
+                        }} />
+                    </div>  
                 </form>
             </div>
+            {
+                isfocused &&
+                <Portal>
+                    <Popover
+                        handleClose={() => setisfocused(false)}
+                        offset={318}
+                        halfpad={200}
+                        top={43}
+                        arrowDisabled={true}
+                    >
+                        <SearchMenu
+                            history={history}
+                            clear={() => updateHistory("[]")}
+                        />
+                    </Popover>
+                </Portal>
+            }
             <button type="button" className={
                 !isfocused
                     ? "Button SearchBar-askButton Button--primary Button--blue "
@@ -36,7 +51,6 @@ const Searchbar = props => {
             >提问</button>
         </div>
     )
-
 }
 
 export default Searchbar

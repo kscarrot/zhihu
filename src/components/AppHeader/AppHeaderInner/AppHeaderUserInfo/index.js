@@ -1,29 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import './AppHeaderUserInfo.css'
-import Bell from './Bell'
-import Comments from './Comments'
+import Bell from '../../../Svg/Bell'
+import Comments from '../../../Svg/Comments'
 import Avatar from './Avatar.jpg'
-import Portal from '../../../Tool/Portal'
 import ProfileMenu from './ProfileMenu'
+import MessagesMenu from './MessagesMenu'
+import PushNotificationsMenu from './PushNotificationsMenu'
 import Popover from '../../../Tool/Popover'
+import Portal from '../../../Tool/Portal'
 
 const AppHeaderUserInfo = props => {
     const [notificationShown, setNotification] = useState(false)
     const [messagesShown, setMessages] = useState(false)
-    const [profile, setProfile] = useState(true)
-
-    const getOffSet = (width, offset) => width > 1032 ? (width - 1032) / 2 + offset : offset
-
-    const offsetList = {
-        notifications: { selfOffset: { left: getOffSet(props.currtentWidth, 934), top: 41.5 }, arrowOffset: { left: 67, top: 0 } },
-        messages: { selfOffset: { left: getOffSet(props.currtentWidth, 934), top: 41.5 }, arrowOffset: { left: 67, top: 0 } },
-        profile: { selfOffset: { left: getOffSet(1440, 934), top: 41.5 }, arrowOffset: { left: 67, top: 0 } },
-    }
+    const [profile, setProfile] = useState(false)
 
     return (
         <div className="AppHeader-userInfo">
             <div className="Popover PushNotifications AppHeader-notifications">
-                <button className="Button PushNotifications-icon Button--plain">
+                <button className="Button PushNotifications-icon Button--plain" onClick={() => setNotification(true)}>
                     <span style={{ display: "inline-flex", alignItems: "center" }}>
                         &#8203;
                         <Bell />
@@ -32,9 +26,22 @@ const AppHeaderUserInfo = props => {
                         <span className="PushNotifications-count">{props.notificationsCount}</span>
                     }
                 </button>
+                {
+                    notificationShown &&
+                    <Portal>
+                        <Popover
+                            handleClose={() => setNotification(false)}
+                            offset={692}
+                            halfpad={181}
+                            top={37}
+                            >
+                            <PushNotificationsMenu />
+                        </Popover>
+                    </Portal>
+                }
             </div>
             <div className="Popover Messages AppHeader-messages">
-                <button className="Button PushNotifications-icon Button--plain">
+                <button className="Button PushNotifications-icon Button--plain" onClick={() => setMessages(true)}>
                     <span style={{ display: "inline-flex", alignItems: "center" }}>
                         &#8203;
                     <Comments />
@@ -43,6 +50,19 @@ const AppHeaderUserInfo = props => {
                         <span className="Messages-count">{props.messagesCount}</span>
                     }
                 </button>
+                {
+                    messagesShown &&
+                    <Portal>
+                        <Popover
+                            handleClose={() => setMessages(false)}
+                            offset={754}
+                            halfpad={181}
+                            top={37}
+                        >
+                            <MessagesMenu />
+                        </Popover>
+                    </Portal>
+                }
             </div>
             <div className="AppHeader-profile">
                 <button className="Button Button--plain" onClick={() => setProfile(true)}>
@@ -53,12 +73,13 @@ const AppHeaderUserInfo = props => {
                     <Portal>
                         <Popover
                             handleClose={() => setProfile(false)}
-                            selfOffset={offsetList.profile.selfOffset}
-                            arrowOffset={offsetList.profile.arrowOffset}>
+                            offset={934}
+                            halfpad={67}
+                            top={41.5}>
                             <ProfileMenu />
                         </Popover>
                     </Portal>
-                }   
+                }
             </div>
         </div>
     )

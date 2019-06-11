@@ -21,12 +21,12 @@ class Portal extends React.Component{
     }
 }
 
-// const Modal = props => {
+// const Portal = props => {
 //     const el = document.createElement('div')
 //     useEffect(() => {
 //         modalRoot.appendChild(el)
 //         return () => modalRoot.removeChild(el)
-//     },[])
+//     })
 //     return createPortal(props.children, el)
 // }
 

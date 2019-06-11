@@ -34,6 +34,15 @@
     color:#76839B;
 }
 
+.Button--link, .Button--plain {
+    height: auto;
+    padding: 0;
+    line-height: inherit;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
 .AppHeader{
     position: relative;
     background-color: #ffffff;
@@ -151,4 +160,142 @@
 
 .AppHeaderProfileMenu-item .Zi{
     margin-right: 6px;
+}
+
+.Messages-menu{
+    width: 360px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.Messages-header{
+    display: flex;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.Messages-list{
+    height: 350px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.Messages-footer{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0 16px;
+    line-height: 40px;
+    background: #fff;
+    border-top: 1px solid #ebebeb;
+    box-sizing: border-box;
+}
+
+.Messages-tab{
+    position: relative;
+    flex: 1 1;
+    height: 48px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.Messages-myMessageTab{
+    width:360px;
+    color:#1a1a1a;
+}
+
+.PushNotifications-menu{
+    width:360px;
+    padding: 0;
+    overflow:hidden;
+}
+
+.PushNotifications-header{
+    display: flex;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.PushNotifications-list{
+    height: 350px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.PushNotifications-footer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    padding: 0 16px;
+    line-height: 40px;
+    background: #fff;
+    border-top: 1px solid #ebebeb;
+    box-sizing: border-box;
+}
+
+.PushNotifications-redbot {
+    position: absolute;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    margin-left: 8px;
+    background-color: #f1403c;
+    border-radius: 50%;
+    transform: translateY(-2px)
+}
+
+
+.PushNotifications-tab {
+    position: relative;
+    flex: 1 1;
+    height: 48px;
+    cursor: pointer;
+    box-shadow: none!important;
+}
+
+.PushNotifications-tab:not(:last-child)::after{
+    position: absolute;
+    left:120px;
+    top:14px;
+    width: 1px;
+    height: 20px;
+    margin: auto;
+    background: #ebebeb;
+    content:"";
+}
+
+
+.PushNotifications-selectedTabIcon {
+    fill: #0084ff
+}
+
+.Notifications-footer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    padding:0 16px;
+    line-height: 40px;
+    background: #fff;
+    border-top: #ebebeb;
+    box-sizing: border-box;
+}
+
+.SearchBar-menu{
+    width: 400px;
+    padding-bottom: 0;
+    overflow-x: hidden;
+}
+
+.SearchBar-menu .SearchBar-noValueMenu{
+    padding-bottom: 8px;
+}
+
+.SearchBar-topSearchItem {
+    display: inline-flex;
+    font-size: 14px;
+    align-items: center;
+    padding: 4px 0;
+    height: 32px;
+    box-sizing: border-box;
+    margin: 2px 0;
 }

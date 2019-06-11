@@ -1,23 +1,26 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import './AppHeader.css'
 import PageHeader from './PageHeader'
 import AppHeaderInner from './AppHeaderInner'
+import  {PageContext} from '../Tool/PageState'
 
 
 const Header = props => {
-    let innerStyle = props.isSticky && props.currentWidth
-        ? { width: props.currentWidth, top: 0, left: 0 } : undefined
+    const pagecontext = useContext(PageContext)
 
-    let headerClass = props.isSticky
+    let innerStyle = pagecontext.isAppHeaderSticky && pagecontext.currentWidth
+        ? { width: pagecontext.currentWidth, top: 0, left: 0 } : undefined
+
+    let headerClass = pagecontext.isAppHeaderSticky
         ? "Sticky AppHeader is-fixed"
         : "Sticky AppHeader "
     return (
         <>
             <header className={headerClass} style={innerStyle}>
                 <AppHeaderInner />
-                <PageHeader isShown={props.isShown} />
+                <PageHeader isShown={pagecontext.isAppHeaderShown} />
             </header>
-            {props.isSticky &&
+            {pagecontext.isAppHeaderSticky &&
                 <div
                     className="Sticky--holder"
                     style={{

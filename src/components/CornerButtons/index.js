@@ -1,9 +1,13 @@
-import React from 'react'
+import React ,{useContext} from 'react'
 import FeedBack from './FeedBack'
 import BackTop from './BackTop'
+import  {PageContext} from '../Tool/PageState'
+
 import './CornerButtons.css'
-const CornerButtons = props => {
-    let backTopClass = props.isShown ? "CornerAnimayedFlex" : "CornerAnimayedFlex CornerAnimayedFlex--hidden"
+const CornerButtons = () => {
+    const pagecontext = useContext(PageContext)
+
+    let backTopClass = pagecontext.isBacktopShown ? "CornerAnimayedFlex" : "CornerAnimayedFlex CornerAnimayedFlex--hidden"
     const handleScrollTop = () => window.scrollTo({ left: 0, top: 0, behavior: 'smooth' })
 
     return (

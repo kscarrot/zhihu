@@ -1,10 +1,10 @@
 import React from 'react'
 import CategoryItem from './CategoryItem'
-import Live from './Live'
-import Ebook from './Ebook'
-import Org from './Org'
-import Edit from './Edit'
-import Infinity from './Infinity'
+import Live from '../../../Svg/Live'
+import Ebook from '../../../Svg/Ebook'
+import Org from '../../../Svg/Org'
+import Edit from '../../../Svg/Edit'
+import Infinity from '../../../Svg/Infinity'
 
 const CategoryList = props => {
     const list = [

@@ -1,11 +1,10 @@
 import React from 'react'
-import Profile from './Profile'
-import Creator from './Creator'
-import Settings from './Settings'
-import Logout from './Logout'
+import Profile from '../../../Svg/Profile'
+import Creator from '../../../Svg/Creator'
+import Settings from '../../../Svg/Settings'
+import Logout from '../../../Svg/Logout'
 
-const ProfileMenu = props => {
-     
+const ProfileMenu = () => {
     const handleClick = e=>{
         e.preventDefault()
     }
