@@ -5,7 +5,6 @@ import TopstoryItem from "../TopstoryItem"
 import mockjson from "../mock.json"
 
 const TopstoryMain = props => {
-    console.log(mockjson)
     return (
         <div className="Topstory-mainColumn">
             <div className="Card Topstory-noMarginCard Topstory-tabCard">
