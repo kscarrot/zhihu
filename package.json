@@ -25,10 +25,12 @@
   "devDependencies": {
     "@babel/core": "7.4.3",
     "@svgr/webpack": "4.1.0",
+    "@types/classnames": "^2.2.9",
     "@types/jest": "24.0.15",
     "@types/node": "12.6.8",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.5",
+    "@types/react-router-dom": "^4.3.4",
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
     "babel-eslint": "10.0.1",
@@ -152,12 +154,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kscarrot/blog.git"
+    "url": "git+https://github.com/kscarrot/zhihu.git"
   },
   "bugs": {
-    "url": "https://github.com/kscarrot/banzi/issues"
+    "url": "https://github.com/kscarrot/zhihu/issues"
   },
-  "homepage": "https://github.com/kscarrot/banzi#readme",
+  "homepage": "https://github.com/kscarrot/zhihu#readme",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
