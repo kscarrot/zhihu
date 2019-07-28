@@ -1,21 +1,20 @@
 import React, { useState, useEffect, createContext } from 'react'
 
 interface ContextProps {
-  isAppHeaderSticky: boolean,
-  isAppHeaderShown: boolean,
-  isBacktopShown: boolean,
-  lastScrollY: number,
-  currentWidth: number,
+  isAppHeaderSticky: boolean
+  isAppHeaderShown: boolean
+  isBacktopShown: boolean
+  lastScrollY: number
+  currentWidth: number
 }
 
-export const PageContext = createContext<ContextProps>(
-  {
-    isAppHeaderShown: true,
-    isAppHeaderSticky: false,
-    isBacktopShown: false,
-    lastScrollY: 1,
-    currentWidth: 1032,
-  })
+export const PageContext = createContext<ContextProps>({
+  isAppHeaderShown: true,
+  isAppHeaderSticky: false,
+  isBacktopShown: false,
+  lastScrollY: 1,
+  currentWidth: 1032,
+})
 
 const PageSate: React.FC = props => {
   const [isAppHeaderSticky, setisAppHeaderSticky] = useState(false)
@@ -28,12 +27,16 @@ const PageSate: React.FC = props => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
-    return () => { window.removeEventListener('scroll', handleScroll) }
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
   })
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
-    return () => { window.removeEventListener('resize', handleResize) }
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
   })
 
   const scollEvent = () => {
@@ -58,10 +61,10 @@ const PageSate: React.FC = props => {
         isBacktopShown: isBacktopShown,
         lastScrollY: lastScrollY,
         currentWidth: currentWidth,
-      }}>
+      }}
+    >
       {props.children}
     </PageContext.Provider>
   )
-
 }
 export default PageSate

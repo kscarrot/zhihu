@@ -6,10 +6,17 @@ import classnames from 'classnames'
 import { PageContext } from '../../tool/PageState'
 
 const CornerButtons: React.FC = props => {
-  const {isBacktopShown} = useContext(PageContext)
-  const handleScrollTop = () => window.scrollTo({ left: 0, top: 0, behavior: 'smooth' })
-  const ButtonClass = classnames(style.Button, style.CornerButton, style["Button--plain"])
-  const BackTopClass = classnames(style.CornerAnimayedFlex, { [style["CornerAnimayedFlex--hidden"]]: !isBacktopShown })
+  const { isBacktopShown } = useContext(PageContext)
+  const handleScrollTop = () =>
+    window.scrollTo({ left: 0, top: 0, behavior: 'smooth' })
+  const ButtonClass = classnames(
+    style.Button,
+    style.CornerButton,
+    style['Button--plain'],
+  )
+  const BackTopClass = classnames(style.CornerAnimayedFlex, {
+    [style['CornerAnimayedFlex--hidden']]: !isBacktopShown,
+  })
 
   return (
     <div className={style.CornerButtons}>
