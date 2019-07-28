@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SvgBackTop: React.FC = props => (
+const SvgBackTop: React.SFC = props => (
   <svg
     className="BackTop"
     fill="currentColor"

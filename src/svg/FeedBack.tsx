@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SvgFeedBack: React.FC = props => (
+const SvgFeedBack: React.SFC = props => (
   <svg
     className="FeedBack"
     fill="currentColor"
