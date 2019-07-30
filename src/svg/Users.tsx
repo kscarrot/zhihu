@@ -3,7 +3,7 @@ import { classNameProps } from './basicProps'
 
 const SvgUsers: React.FC<classNameProps> = props => (
   <svg
-    className={"Zi Zi--Users"+props.svgclass}
+    className={'Zi Zi--Users' + props.svgclass}
     fill="currentColor"
     viewBox="0 0 24 24"
     width={22}

@@ -19,7 +19,13 @@ const ProfileMenu: React.SFC = () => {
   )
 
   const listItem = (Icon: React.ReactNode, text: string) => (
-    <a href="" type="button" onClick={handleClick} className={baseButtonClass} key={text}>
+    <a
+      href=""
+      type="button"
+      onClick={handleClick}
+      className={baseButtonClass}
+      key={text}
+    >
       {Icon}
       {text}
     </a>
