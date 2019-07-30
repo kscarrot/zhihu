@@ -26,7 +26,7 @@ const Popover: React.FC<PopoverProps> = props => {
   useEffect(() => {
     document.addEventListener('click', handleClose)
     return () => document.removeEventListener('click', handleClose)
-  }, [])
+  })
 
   const handleClick: React.ReactEventHandler = e => {
     e.preventDefault()

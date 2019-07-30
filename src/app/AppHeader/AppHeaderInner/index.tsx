@@ -3,17 +3,17 @@ import * as style from '../../../App.css'
 import ZhihuLogo from '../../../svg/ZhihuLogo'
 import AppHeaderNav from './AppHeaderNav'
 // import Searchbar from './Searchbar'
-// import AppHeaderUserInfo from './AppHeaderUserInfo'
+import AppHeaderUserInfo from './AppHeaderUserInfo'
 
 const AppHeaderInner: React.FC = props => {
   return (
     <div className={style['AppHeader-inner']}>
-      <a href="#">
+      <a>
         <ZhihuLogo />
       </a>
       <AppHeaderNav />
-      {/* <Searchbar />
-            <AppHeaderUserInfo notificationsCount={3} messagesCount={1} /> */}
+      {/* <Searchbar /> */}
+      <AppHeaderUserInfo notificationsCount={3} messagesCount={1} />
     </div>
   )
 }

@@ -3,11 +3,11 @@ import * as style from '../../../App.css'
 import Bell from '../../../svg/Bell'
 import Comments from '../../../svg/Comments'
 import Avatar from '../../../assert/Avatar.jpg'
-// import ProfileMenu from './ProfileMenu'
-// import MessagesMenu from './MessagesMenu'
-// import PushNotificationsMenu from './PushNotificationsMenu'
-// import Popover from '../../../Tool/Popover'
-// import Portal from '../../../Tool/Portal'
+import ProfileMenu from './ProfileMenu'
+import MessagesMenu from './MessagesMenu'
+import PushNotificationsMenu from './PushNotificationsMenu'
+import Popover from '../../../tool/Popover'
+import Portal from '../../../tool/Portal'
 
 interface UserInfoProps {
   notificationsCount: number
@@ -37,19 +37,19 @@ const AppHeaderUserInfo: React.FC<UserInfoProps> = props => {
             </span>
           )}
         </button>
-        {/* {
-                    notificationShown &&
-                    <Portal>
-                        <Popover
-                            handleClose={() => setNotification(false)}
-                            offset={692}
-                            halfpad={181}
-                            top={37}
-                            >
-                            <PushNotificationsMenu />
-                        </Popover>
-                    </Portal>
-                } */}
+        {notificationShown && (
+          <Portal>
+            <Popover
+              handleClose={() => setNotification(false)}
+              offset={692}
+              halfpad={181}
+              top={37}
+              arrowDisabled={false}
+            >
+              <PushNotificationsMenu />
+            </Popover>
+          </Portal>
+        )}
       </div>
       <div className="Popover Messages AppHeader-messages">
         <button
@@ -64,19 +64,19 @@ const AppHeaderUserInfo: React.FC<UserInfoProps> = props => {
             <span className="Messages-count">{messagesCount}</span>
           )}
         </button>
-        {/* {
-                    messagesShown &&
-                    <Portal>
-                        <Popover
-                            handleClose={() => setMessages(false)}
-                            offset={754}
-                            halfpad={181}
-                            top={37}
-                        >
-                            <MessagesMenu />
-                        </Popover>
-                    </Portal>
-                } */}
+        {messagesShown && (
+          <Portal>
+            <Popover
+              handleClose={() => setMessages(false)}
+              offset={754}
+              halfpad={181}
+              top={37}
+              arrowDisabled={false}
+            >
+              <MessagesMenu />
+            </Popover>
+          </Portal>
+        )}
       </div>
       <div className="AppHeader-profile">
         <button
@@ -85,18 +85,19 @@ const AppHeaderUserInfo: React.FC<UserInfoProps> = props => {
         >
           <img src={Avatar} alt="" width="30" height="30" />
         </button>
-        {/* {
-                    profile &&
-                    <Portal>
-                        <Popover
-                            handleClose={() => setProfile(false)}
-                            offset={934}
-                            halfpad={67}
-                            top={41.5}>
-                            <ProfileMenu />
-                        </Popover>
-                    </Portal>
-                } */}
+        {profile && (
+          <Portal>
+            <Popover
+              handleClose={() => setProfile(false)}
+              offset={934}
+              halfpad={67}
+              top={41.5}
+              arrowDisabled={false}
+            >
+              <ProfileMenu />
+            </Popover>
+          </Portal>
+        )}
       </div>
     </div>
   )
