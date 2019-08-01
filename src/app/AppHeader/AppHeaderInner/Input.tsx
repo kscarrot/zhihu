@@ -1,24 +1,30 @@
 import React from 'react'
-import './Searchbar.css'
-
+import * as style from '../../../App.css'
+import classnames from 'classnames'
 interface InputProps {
   isfocused: boolean
-  setInputText: () => void
+  setInputText: (value: string) => void
   onClick: () => void
 }
 
 const Input: React.FC<InputProps> = props => {
-  const normal = 'SearchBar-input Input-wrapper  Input-wrapper--grey'
-  const focused =
-    'SearchBar-input SearchBar-focusedInput Input-wrapper Input-wrapper--grey is-focus'
+  const { isfocused, setInputText, onClick } = props
+  const InputClass = classnames(
+    style['SearchBar-input'],
+    { [style['SearchBar-focusedInput']]: isfocused },
+    style['Input-wrapper'],
+    style['Input-wrapper--grey'],
+    { 'is-focus': isfocused },
+  )
+
   const handleChange: React.ReactEventHandler = e => {
-    // props.setInputText(e.target.value)
+    setInputText((e.target as HTMLInputElement).value)
   }
   return (
-    <div className={props.isfocused ? focused : normal}>
+    <div className={InputClass}>
       <input
         onChange={handleChange}
-        onClick={props.onClick}
+        onClick={onClick}
         type="text"
         maxLength={100}
         autoComplete="off"

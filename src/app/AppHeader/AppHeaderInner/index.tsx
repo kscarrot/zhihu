@@ -2,7 +2,7 @@ import React from 'react'
 import * as style from '../../../App.css'
 import ZhihuLogo from '../../../svg/ZhihuLogo'
 import AppHeaderNav from './AppHeaderNav'
-// import Searchbar from './Searchbar'
+import SearchBar from './SearchBar'
 import AppHeaderUserInfo from './AppHeaderUserInfo'
 
 const AppHeaderInner: React.FC = props => {
@@ -12,7 +12,7 @@ const AppHeaderInner: React.FC = props => {
         <ZhihuLogo />
       </a>
       <AppHeaderNav />
-      {/* <Searchbar /> */}
+      <SearchBar />
       <AppHeaderUserInfo notificationsCount={3} messagesCount={1} />
     </div>
   )

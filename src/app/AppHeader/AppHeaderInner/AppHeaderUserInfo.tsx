@@ -20,6 +20,7 @@ const AppHeaderUserInfo: React.FC<UserInfoProps> = props => {
   const [profile, setProfile] = useState(false)
   const { notificationsCount, messagesCount } = props
 
+  //FIXME: 点击三个button,Popver close事件未能正常触发
   return (
     <div className={style['AppHeader-userInfo']}>
       <div className="Popover PushNotifications AppHeader-notifications">

@@ -1,10 +1,10 @@
 import React from 'react'
-import './Searchbar.css'
-import SearchIcon from '../../../Svg/SearchIcon'
+import SearchIcon from '../../../svg/SearchIcon'
 
 interface InputAfterProps {
   handleClick: () => void
 }
+
 const InputAfter: React.FC<InputAfterProps> = props => {
   const handleClick: React.ReactEventHandler = e => {
     e.preventDefault()
